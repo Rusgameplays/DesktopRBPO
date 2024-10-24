@@ -1,6 +1,6 @@
 ﻿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by win32-desktop.rc
+// Включаемый файл, созданный в Microsoft Visual C++.
+// Используется WindowsProject1.rc
 //
 #define IDC_MYICON                      2
 #define IDD_WIN32DESKTOP_DIALOG         102
