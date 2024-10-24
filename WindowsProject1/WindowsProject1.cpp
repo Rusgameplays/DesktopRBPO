@@ -7,10 +7,9 @@
 #define ID_TRAY_APP_ICON 1001
 #define ID_TRAY_EXIT 1002
 #define WM_TRAYICON (WM_USER + 1)
-
-HINSTANCE hInst;
+//test
+HINSTANCE  hInst;
 NOTIFYICONDATA nid;
-
 WCHAR szTitle[MAX_LOADSTRING];
 WCHAR szWindowClass[MAX_LOADSTRING];
 
