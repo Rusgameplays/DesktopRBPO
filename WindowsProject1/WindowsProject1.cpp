@@ -145,8 +145,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     break;
     case WM_CLOSE:
+        if (MessageBox(hWnd, L"Вы правда хотите закрыть окно?", L"Предупреждение!", MB_OKCANCEL) == IDOK)
+        {
+            DestroyWindow(hWnd);
+        }
+        return 0;
+    /*case WM_CLOSE:
         ShowWindow(hWnd, SW_HIDE);
-        break;
+        break;*/
     case WM_DESTROY:
         RemoveTrayIcon();
         PostQuitMessage(0);
@@ -165,6 +171,7 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_INITDIALOG:
         return (INT_PTR)TRUE;
 
+    
     case WM_COMMAND:
         if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
         {
@@ -186,6 +193,7 @@ void AddTrayIcon(HWND hWnd) {
     wcscpy_s(nid.szTip, szTitle);
 
     Shell_NotifyIcon(NIM_ADD, &nid);
+
 }
 
 void RemoveTrayIcon() {
